@@ -1,0 +1,58 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h4>CONTACT</h4>
+
+        <div class="social-links">
+          {{ range .Site.Params.contact }}
+            <div class="social-link contact-links">
+
+              <img
+                src="{{ printf "img/icons/%s.png" .name | lower | absURL }}"
+                alt="{{ .name | lower }}"
+              />
+              <a href="{{ .link }}" id="{{ .name | lower }}-link">
+                {{ if .value}}
+                  {{ .value }}
+                {{ else }}
+                  {{ .name }}
+                {{ end }}
+              </a>
+            </div>
+
+          {{ end }}
+        </div>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h4>FOLLOW</h4>
+
+        <div class="social-links follow-links">
+          {{ range .Site.Params.social }}
+            <div class="social-link">
+
+              <img
+                src="{{ printf "img/icons/%s.png" .name | lower | absURL }}"
+                alt="{{ .name | lower }}"
+              />
+              <a href="{{ .link }}">
+                {{ .name }}
+              </a>
+            </div>
+
+          {{ end }}
+        </div>
+      </div>
+
+      {{ if not .Site.Params.notShowThemeInfo }}
+        <div class="footer-col footer-col-3 powered-by">
+          <p>
+            powered by <a href="https://github.com/skowalak/bay">Bay</a> | {{ now.Format "2006" }}
+          </p>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</footer>
+

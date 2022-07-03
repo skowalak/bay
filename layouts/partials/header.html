@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="{{ "/" | absURL }}/">
+      <img src="{{ "img/title.png" | absURL }}" alt="{{ .Site.Title }}" />
+    </a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon"></a>
+
+      <div class="menu">
+        {{ range .Site.Params.menu }}
+        <a class="page-link" href="{{ .slug }}">{{ .name }}</a>
+        {{ end }}
+      </div>
+    </nav>
+  </div>
+</header>

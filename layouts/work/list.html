@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="work">
+  <h1 class="page-heading">{{ .Title }}</h1>
+    <div class="work-content">
+    {{ .Content }}
+    </div>
+
+  {{ range .Params.workItems }}
+  <div class="work-item">
+    <img
+      src="{{ .image.src | absURL }}"
+      alt="{{ .image.alt }}"
+      class="work-bubble"
+    />
+    <span class="work-text">
+      <strong>{{ .title }}</strong>
+      &mdash;
+      {{ .description }}
+    </span>
+  </div>
+  {{ end }}
+
+  {{ range .Paginator.Pages }}
+  <div class="work-item">
+    <img
+      src="{{ .Params.image.src | absURL }}"
+      alt="{{ .Params.image.alt }}"
+      class="work-bubble"
+    />
+    <span class="work-text">
+      <strong>{{ .Title }}</strong>
+      &mdash;
+      {{ if .Description }}{{ .Description }}{{ end }}
+      {{ .Content }}
+    </span>
+  </div>
+  {{ end }}
+
+</div>
+{{ end }}

@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="post">
+<header class="post-header">
+
+{{ if .Draft }}{{- partial "draft-banner.html" . -}}{{ end }}
+
+<h1 class="post-title">{{ .Title }}</h1>
+
+{{ if .Params.subtitle }}<h1 class="post-subtitle">{{ .subtitle }}</h1>{{ end }}
+<p class="post-meta">
+{{ if not .Params.date.IsZero }}
+<span class="post-date">
+{{ .Date.Format "January 2, 2006" }}
+</span>
+{{ end }}
+{{ if .Params.author }} • {{ .Params.author }}{{ end }}{{ if .Params.meta }} • {{ .Params.meta }}{{ end }}
+</p>
+</header>
+
+<article class="post-content">
+{{ .Content }}
+</article>
+
+{{ if .Draft }}{{- partial "draft-banner.html" . -}}{{ end }}
+
+</div>
+{{ end }}

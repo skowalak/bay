@@ -1,0 +1,13 @@
+{{ range .Site.Params.contact }}
+  {{ if (and (eq .name "WeChat") .value) }}
+<div id="wechat-widget">
+  <p>
+    Find me on WeChat with the ID <strong>{{ .value }}</strong>, or scan my QR code:
+  </p>
+
+  <img src="{{ "/img/wechat-qr-code.png" | absURL }}" alt="QR code" id="qr-code" />
+</div>
+    {{ break }}
+  {{ end }}
+{{ end }}
+
