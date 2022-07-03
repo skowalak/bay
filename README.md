@@ -29,17 +29,19 @@ For more information on Hugo visit the [documentation][hugodocs].
 An Example Site is included in the `exampleSite` directory.
 
 You can add links to the website header by modifying the `params` section in
-`config.yaml`:
+`config.yaml`. Note: do not add slashes to the beginning of the slugs.
 
 ``` yaml
 params:
   menu:
     - name: Home
-      slug: /
+      slug: 
     - name: Work
-      slug: /work
+      slug: work
     - name: Blog
-      slug: /blog
+      slug: blog
+    - name: Personal
+      slug: posts/personal
 ```
 
 To add Social Media links or contact links to the footer:

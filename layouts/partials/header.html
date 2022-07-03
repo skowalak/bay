@@ -9,7 +9,7 @@
 
       <div class="menu">
         {{ range .Site.Params.menu }}
-        <a class="page-link" href="{{ .slug }}">{{ .name }}</a>
+        <a class="page-link" href="{{ .slug | absURL }}">{{ .name }}</a>
         {{ end }}
       </div>
     </nav>

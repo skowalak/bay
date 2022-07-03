@@ -39,9 +39,9 @@ params:
       link: /feed.xml
   menu:
     - name: Home
-      slug: /
+      slug: 
     - name: Work
-      slug: /work
+      slug: work
     - name: Blog
-      slug: /blog
+      slug: blog
 
