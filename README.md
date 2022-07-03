@@ -7,7 +7,7 @@ Bay is a simple theme for Hugo. [Live Demo][demo]
 The Bay Hugo theme is a port of the [Bay Jekyll theme][bay-jekyll] by [Eliott
 Vincent][ev].
 
-![screenshot of a webpage with the bay theme installed](/screenshot.webp)
+![screenshot of a webpage with the bay theme installed](/screenshot.png)
 
 
 ## Installation
