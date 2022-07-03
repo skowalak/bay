@@ -1,4 +1,4 @@
-baseURL: http://example.org/
+baseURL: https://skowalak.github.io/bay/
 languageCode: en-us
 title: Bay Hugo Theme
 themesDir: ../..
