@@ -35,3 +35,9 @@ $("a#wechat-link").on("mousemove", function(event) {
 $("a#wechat-link").on("mouseleave", function(event) {
   $("#wechat-widget").css({ display: "none" });
 });
+
+var expandSidebar = function(elementId){
+  $(`#${elementId}`).removeClass('collapsed');
+};
+
+

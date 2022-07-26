@@ -1,0 +1,11 @@
+{{ $seed := "foo" }}
+{{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+<div class="inline-sidebar collapsed" id="mp-sidebar-{{ $random }}">
+  <div class="expand-button" id="mp-button-{{ $random }}">
+    <a href="#/" onClick="(function () { expandSidebar('mp-sidebar-{{ $random }}') })()">Read More</a>
+  </div>
+  <div class="sidebar-contents">
+    <h5>{{ .Get "title" }}<a name="mp-sidebar"></a></h5>
+    {{ .Inner }}
+  </div>
+</div>
