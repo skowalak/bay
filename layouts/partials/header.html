@@ -1,7 +1,11 @@
 <header class="site-header">
   <div class="wrapper">
-    <a class="site-title" href="{{ "/" | absURL }}/">
+    <a class="site-title" href="{{ "" | absURL }}/">
+      {{ if .Site.Params.logo.image }}
       <img src="{{ "img/title.png" | absURL }}" alt="{{ .Site.Title }}" />
+      {{ else }}
+      <span class="site-title-text">{{ .Site.Params.logo.text }}</span>
+      {{ end }}
     </a>
 
     <nav class="site-nav">

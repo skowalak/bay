@@ -45,13 +45,21 @@
         </div>
       </div>
 
-      {{ if not .Site.Params.notShowThemeInfo }}
-        <div class="footer-col footer-col-3 powered-by">
+        <div class="footer-col footer-col-3 powered-by search-col">
+          {{ if .Site.Params.searchEnabled }}
+          <h4>SEARCH</h4>
+          <form id="search-form">
+            <input type="text" id="search-input" autocomplete="off">
+          </form>
+          <div id="search-results" style="display: none;"></div>
+          {{ end }}
+
+          {{ if not .Site.Params.notShowThemeInfo }}
           <p>
             powered by <a href="https://github.com/skowalak/bay">Bay</a> | {{ now.Format "2006" }}
           </p>
+          {{ end }}
         </div>
-      {{ end }}
     </div>
   </div>
 </footer>

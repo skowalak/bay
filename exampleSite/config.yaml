@@ -7,15 +7,20 @@ permalinks:
   blog: /:year/:month/:day/:title/
 outputs:
   home:
-    - html
+    - HTML
     - RSS
+    - JSON
   section:
-    - html
+    - HTML
 outputFormats:
   RSS:
     mediatype: application/rss
     baseName: feed
 params:
+  logo:
+    image: true
+    text: BAY THEME
+  searchEnabled: true
   notShowThemeInfo: false
   contact:
     - name: Email

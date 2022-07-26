@@ -1,2 +1,10 @@
 <script type="text/javascript" src="{{ "js/vendor/cash-8.1.1.min.js" | absURL }}"></script>
+{{ if .Site.Params.searchEnabled }}
+<script type="text/javascript" src="{{ "js/vendor/fuse-6.6.2.min.js" | absURL }}"></script>
+{{ end }}
 <script type="text/javascript" src="{{ "js/site.js" | absURL }}"></script>
+{{ if .Site.Params.searchEnabled }}
+{{ $jsTemplate := resources.Get "js/fastsearch.js" }}
+{{ $js := $jsTemplate | resources.ExecuteAsTemplate "fastsearch.js" . | js.Build "fastsearch.js" }}
+<script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
