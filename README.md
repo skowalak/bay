@@ -28,6 +28,17 @@ For more information on Hugo visit the [documentation][hugodocs].
 
 An Example Site is included in the `exampleSite` directory.
 
+The logo on the website header is an image under `static/img/title.png`. To use
+text instead, set the `logo.image` parameter to false and set the `logo.text`
+parameter to the text you want to be displayed:
+
+``` yaml
+params:
+  logo:
+    image: true
+    text: BAY THEME
+```
+
 You can add links to the website header by modifying the `params` section in
 `config.yaml`. Note: do not add slashes to the beginning of the slugs.
 
