@@ -20,7 +20,27 @@
   </div>
   {{ end }}
 
-  {{ range .Paginator.Pages }}
+  {{ range where .Pages "Type" "!=" "contribution" }}
+  <div class="work-item">
+    <img
+      src="{{ .Params.image.src | absURL }}"
+      alt="{{ .Params.image.alt }}"
+      class="work-bubble"
+    />
+    <span class="work-text">
+      <strong>{{ .Title }}</strong>
+      &mdash;
+      {{ if .Description }}{{ .Description }}{{ end }}
+      {{ .Content }}
+    </span>
+  </div>
+  {{ end }}
+
+  {{ with (where .Pages "Type" "contribution") }}
+  <h2>Contributions</h2>
+  {{ end }}
+ 
+  {{ range where .Pages "Type" "contribution" }}
   <div class="work-item">
     <img
       src="{{ .Params.image.src | absURL }}"
