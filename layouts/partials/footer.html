@@ -36,7 +36,7 @@
                 src="{{ printf "img/icons/%s.png" .name | lower | absURL }}"
                 alt="{{ .name | lower }}"
               />
-              <a href="{{ .link }}">
+              <a {{ if .rel }} rel="{{ .rel }}" {{ end }} href="{{ .link }}">
                 {{ .name }}
               </a>
             </div>

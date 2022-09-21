@@ -69,7 +69,17 @@ params:
 ```
 
 Icons can be placed in `themes/bay/static/img/icons`. They must be a lower-case
-version of the `name`.
+version of the `name`. Some platforms use links from your website to your
+profile with a special `rel` attribute. To add such an attribute, use the `rel`
+parameter: 
+
+``` yaml
+params:
+  social:
+    - name: Mastodon
+      link: https://mastodon.social/YourMastodonUsername
+      rel: me
+```
 
 To modify the home page, edit the `content/index.md` file, to add more blog
 posts add more files to `content/blog/`, to add more sections to the work page,

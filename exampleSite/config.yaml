@@ -38,6 +38,7 @@ params:
       link: http://linkedin.com/in/YourLinkedInUsername
     - name: GitHub
       link: https://github.com/YourGitHubUsername
+      rel: me
     - name: Dribbble
       link: https://dribbble.com/YourDribbbleUsername
     - name: RSS
