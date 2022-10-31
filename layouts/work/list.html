@@ -7,11 +7,19 @@
 
   {{ range .Params.workItems }}
   <div class="work-item">
+    {{ if .Params.image }}
     <img
-      src="{{ .image.src | absURL }}"
-      alt="{{ .image.alt }}"
+      src="{{ .Params.image.src | absURL }}"
+      alt="{{ .Params.image.alt }}"
       class="work-bubble"
     />
+    {{ else }}
+    <img
+      src="{{ 'img/work/water.png' | absURL }}"
+      alt="water pattern"
+      class="work-bubble"
+    />
+    {{ end }}
     <span class="work-text">
       <strong>{{ .title }}</strong>
       &mdash;
@@ -22,11 +30,19 @@
 
   {{ range where .Pages "Type" "!=" "contribution" }}
   <div class="work-item">
+    {{ if .Params.image }}
     <img
       src="{{ .Params.image.src | absURL }}"
       alt="{{ .Params.image.alt }}"
       class="work-bubble"
     />
+    {{ else }}
+    <img
+      src="{{ 'img/work/water.png' | absURL }}"
+      alt="water pattern"
+      class="work-bubble"
+    />
+    {{ end }}
     <span class="work-text">
       <strong>{{ .Title }}</strong>
       &mdash;
@@ -42,11 +58,19 @@
  
   {{ range where .Pages "Type" "contribution" }}
   <div class="work-item">
+    {{ if .Params.image }}
     <img
       src="{{ .Params.image.src | absURL }}"
       alt="{{ .Params.image.alt }}"
       class="work-bubble"
     />
+    {{ else }}
+    <img
+      src="{{ 'img/work/water.png' | absURL }}"
+      alt="water pattern"
+      class="work-bubble"
+    />
+    {{ end }}
     <span class="work-text">
       <strong>{{ .Title }}</strong>
       &mdash;
